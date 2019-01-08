@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "scss/styles.css",
+	"sources": [
+		"scss/styles.scss"
+	],
+	"sourcesContent": [
+		".font{\r\n    font-family: 'Open Sans', sans-serif;\r\n}\r\n\r\n.mainTable{\r\n    widows: 80%;\r\n    margin:auto;\r\n}\r\n\r\n.success{\r\n    color: green;\r\n}\r\n.failure{\r\n    color:red;\r\n}\r\n"
+	],
+	"mappings": ";AAAA,AAAA,KAAK,CAAA;EACD,WAAW,EAAE,uBAAwB;CACxC;;;AAED,AAAA,UAAU,CAAA;EACN,MAAM,EAAE,GAAI;EACZ,MAAM,EAAC,IAAK;CACf;;;AAED,AAAA,QAAQ,CAAA;EACJ,KAAK,EAAE,KAAM;CAChB;;;AACD,AAAA,QAAQ,CAAA;EACJ,KAAK,EAAC,GAAI;CACb",
+	"names": []
+}

@@ -1,0 +1,24 @@
+.font{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.mainTable{
+    width: 80%;
+    margin:auto;
+}
+
+.success{
+    color: green;
+}
+.failure{
+    color:red;
+}
+
+.symbol{
+    background-color: initial;
+}
+
+.headerbtn{
+    @extend .symbol;
+    font-weight: 700;
+}
