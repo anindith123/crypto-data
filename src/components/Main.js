@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-//import { connect } from 'react-redux';
-//import * as actions from '../redux/actions/fetchActions';
+import { connect } from 'react-redux';
+import {withRouter} from 'react-router';
 import TableHeader from './tableHeader';
 import styles from '../styles/styles.css';
 import {Route} from 'react-router-dom';
@@ -15,17 +15,25 @@ class Main extends Component {
         //  console.log(this.props.cdata);
         //  console.log(this.props.cdata.data.data_available);
 
-        return <div className="">
-            <Route exact path="/" component={TableHeader}/>
-            <Route path="/coin/:id" component={Coin}/>
+        return <div className="parentdiv">
+            <Route exact path="/" render={() => (
+                <React.Fragment>
+                    <TableHeader {...this.props}/>
+                </React.Fragment>
+            )} />
+            <Route path="/coin/:id" render={() => (
+                <React.Fragment>
+                    <Coin {...this.props}/>
+                </React.Fragment>
+            )} />
             
         </div>
     }
 }
 
-export default Main;
 
-/*function mapStateToProps(state) {
+
+function mapStateToProps(state) {
 
     return {
         cdata: state
@@ -33,4 +41,4 @@ export default Main;
 
 }
 
-export default connect(mapStateToProps)(Main) */
+export default withRouter(connect(mapStateToProps)(Main))

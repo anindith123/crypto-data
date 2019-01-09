@@ -1,7 +1,10 @@
 let initialState = {
     coins: [],
-    data_available: false,
-    coin: []
+    coins_available: false,
+    coin_available:false,
+    coin_meta: [],
+    coin_quote: [],
+    coin_quote_available:false
 
 };
 
@@ -11,14 +14,21 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 coins: action.payload,
-                data_available: true
+                coins_available: true
 
             }
-        case 'FETCH_COIN':
+        case 'FETCH_COIN_META':
             return {
                 ...state,
-                coin: action.payload,
-                data_available: true
+                coin_meta: action.payload,
+                coin_available: true
+            }
+
+        case 'FETCH_COIN_QUOTE':
+            return {
+                ...state,
+                coin_quote:action.payload,
+                coin_quote_available:true
             }
         default: return state;
     }

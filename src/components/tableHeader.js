@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import TableData from './tabledata';
 import * as actions from '../redux/actions/fetchActions';
-import { connect } from 'react-redux';
-import {withRouter} from 'react-router';
+
 
 class TableHeader extends Component {
    
@@ -11,8 +10,6 @@ class TableHeader extends Component {
     }
 
     render() {
-        console.log("runned1");
-        console.log(this.props);
         return <div className="table-responsive mainTable">
             <table className="table table-striped">
                 <tbody>
@@ -28,7 +25,7 @@ class TableHeader extends Component {
                         <th><button type="button" className="btn btn-default headerbtn" onClick={() => this.props.dispatch(actions.fetchall("percent_change_24h")) }>change 24hrs</button></th>
                         <th><button type="button" className="btn btn-default headerbtn" onClick={() => this.props.dispatch(actions.fetchall("percent_change_7d")) }>change 7days</button></th>
                     </tr>
-                    {!this.props.cdata.data.data_available ? <tr><td>loading</td></tr> :
+                    {!this.props.cdata.data.coins_available ? <tr><td>loading</td></tr> :
                         <TableData {...this.props} />
                     }
                 </tbody>
@@ -37,12 +34,5 @@ class TableHeader extends Component {
     }
 }
 
-function MapStateToProps(state) {
 
-    return {
-        cdata: state
-    }
-
-
-}
-export default withRouter(connect(MapStateToProps)(TableHeader))
+export default TableHeader;

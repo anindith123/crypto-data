@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import numeral from 'numeral';
-import * as actions from '../redux/actions/fetchActions';
 import {Link} from 'react-router-dom';
 
 class TableData extends Component {
     constructor(props) {
         super(props);
         this.cellvalue = this.cellvalue.bind(this);
-        this.cell = this.cell.bind(this);
+       
     }
     cellvalue(val) {
         let classval;
@@ -15,13 +14,10 @@ class TableData extends Component {
             return classval;
 
     }
-    cell() {
-        console.log("on clicked");
-
-    }
+    
     render() {
-        console.log("runned2");
-        return (this.props.cdata.data.coins.data.map((coin) => <tr className="tabledata" key={coin.id}>
+        console.log(this.props.cdata);
+        return (this.props.cdata.data.coins_available?(this.props.cdata.data.coins.data.map((coin) => <tr className="tabledata" key={coin.id}>
             <td>{coin.cmc_rank}</td>
             <td><Link to={`coin/${coin.id}`}><button type="button" className="btn btn-default headerbtn">{coin.symbol}</button></Link></td>
             <td>{coin.name}</td>
@@ -32,7 +28,7 @@ class TableData extends Component {
             <td className={this.cellvalue(coin.quote.USD.percent_change_1h)}>{numeral(coin.quote.USD.percent_change_1h).format('0.00')}%</td>
             <td className={this.cellvalue(coin.quote.USD.percent_change_24h)}>{numeral(coin.quote.USD.percent_change_24h).format('0.00')}%</td>
             <td className={this.cellvalue(coin.quote.USD.percent_change_7d)}>{numeral(coin.quote.USD.percent_change_7d).format('0.00')}%</td>
-        </tr>))
+        </tr>)) : "loading" )
 
     }
 }

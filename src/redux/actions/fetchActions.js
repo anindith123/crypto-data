@@ -16,14 +16,14 @@ export function fetchall(sort) {
     }
 }
 
-export function fetchone(id) {
+export function fetchonemeta(id) {
     
     return function (dispatch) {
         console.log("fetchone dispatched");
         axios.get(`https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/info?CMC_PRO_API_KEY=9fc98142-428a-4d61-8d29-66fc6aff1bbf&id=${id}`)
             .then((response) => {
                 dispatch({
-                    type: 'FETCH_COIN',
+                    type: 'FETCH_COIN_META',
                    payload: response.data
                })
            })
@@ -32,3 +32,21 @@ export function fetchone(id) {
             })
         }
     }
+
+ export function fetchonequote(id) {
+    
+        return function (dispatch) {
+            console.log("fetchone dispatched");
+            axios.get(`https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?CMC_PRO_API_KEY=9fc98142-428a-4d61-8d29-66fc6aff1bbf&id=${id}`)
+                .then((response) => {
+                    dispatch({
+                        type: 'FETCH_COIN_QUOTE',
+                       payload: response.data
+                   })
+               })
+               .catch(function (error) {
+                    console.log(error);
+                })
+            }
+        }
+
