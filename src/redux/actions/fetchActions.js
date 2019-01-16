@@ -16,37 +16,40 @@ export function fetchall(sort) {
     }
 }
 
-export function fetchonemeta(id) {
-    
+
+export function reset() {
     return function (dispatch) {
-        console.log("fetchone dispatched");
-        axios.get(`https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/info?CMC_PRO_API_KEY=9fc98142-428a-4d61-8d29-66fc6aff1bbf&id=${id}`)
-            .then((response) => {
-                dispatch({
-                    type: 'FETCH_COIN_META',
-                   payload: response.data
-               })
-           })
-           .catch(function (error) {
+        dispatch({
+            type: 'RESET_DATA'
+        })
+    }
+}
+
+function fetchquote(id) {
+    console.log("coinquoteget");
+    return axios.get(`https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?CMC_PRO_API_KEY=9fc98142-428a-4d61-8d29-66fc6aff1bbf&id=${id}`);
+}
+function fetchmeta(id) {
+    console.log("coinmetaget");
+    return axios.get(`https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/info?CMC_PRO_API_KEY=9fc98142-428a-4d61-8d29-66fc6aff1bbf&id=${id}`)
+}
+
+export function getcoin(id) {
+
+    return function (disptach) {
+        axios.all([fetchquote(id), fetchmeta(id)])
+            .then(axios.spread(function (quote, meta) {
+                console.log("&&&&&&&&&&&&&&&&&&");
+                console.log([quote, meta]);
+                disptach({
+                    type: 'GET_COIN',
+                    payload: [quote, meta]
+                })
+
+            }))
+            .catch(function (error) {
                 console.log(error);
             })
-        }
     }
-
- export function fetchonequote(id) {
-    
-        return function (dispatch) {
-            console.log("fetchone dispatched");
-            axios.get(`https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?CMC_PRO_API_KEY=9fc98142-428a-4d61-8d29-66fc6aff1bbf&id=${id}`)
-                .then((response) => {
-                    dispatch({
-                        type: 'FETCH_COIN_QUOTE',
-                       payload: response.data
-                   })
-               })
-               .catch(function (error) {
-                    console.log(error);
-                })
-            }
-        }
+}
 

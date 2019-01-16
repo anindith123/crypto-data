@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {withRouter} from 'react-router';
+import { withRouter } from 'react-router';
 import TableHeader from './tableHeader';
 import styles from '../styles/styles.css';
-import {Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Coin from './coin.js';
 class Main extends Component {
-    
+
     componentDidMount() {
         console.log("mounted");
     }
@@ -18,15 +18,15 @@ class Main extends Component {
         return <div className="parentdiv">
             <Route exact path="/" render={() => (
                 <React.Fragment>
-                    <TableHeader {...this.props}/>
+                    <TableHeader {...this.props} />
                 </React.Fragment>
             )} />
-            <Route path="/coin/:id" render={() => (
+            <Route path="/coin/:id" render={(match) => (
                 <React.Fragment>
-                    <Coin {...this.props}/>
+                    <Coin {...this.props} match={match}/>
                 </React.Fragment>
             )} />
-            
+
         </div>
     }
 }
@@ -37,6 +37,7 @@ function mapStateToProps(state) {
 
     return {
         cdata: state
+        
     }
 
 }
