@@ -34,19 +34,19 @@ export function reset() {
     }
 }
 
-function fetchquote(id) {
+function fetchquote(id,currency) {
     console.log("coinquoteget");
-    return axios.get(`https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?CMC_PRO_API_KEY=9fc98142-428a-4d61-8d29-66fc6aff1bbf&id=${id}`);
+    return axios.get(`https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?CMC_PRO_API_KEY=9fc98142-428a-4d61-8d29-66fc6aff1bbf&id=${id}&convert=${currency}`);
 }
 function fetchmeta(id) {
     console.log("coinmetaget");
     return axios.get(`https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/info?CMC_PRO_API_KEY=9fc98142-428a-4d61-8d29-66fc6aff1bbf&id=${id}`)
 }
 
-export function getcoin(id) {
+export function getcoin(id,currency) {
 
     return function (disptach) {
-        axios.all([fetchquote(id), fetchmeta(id)])
+        axios.all([fetchquote(id,currency), fetchmeta(id)])
             .then(axios.spread(function (quote, meta) {
                 console.log("&&&&&&&&&&&&&&&&&&");
                 console.log([quote, meta]);
