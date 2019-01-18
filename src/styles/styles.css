@@ -11,26 +11,29 @@
 }
 
 /* line 25, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
-.success, .successval {
+.successs, .successval {
   color: green;
+  font-weight: 600;
 }
 
-/* line 28, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 29, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .failure {
   color: red;
+  font-weight: 600;
 }
 
-/* line 32, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 34, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .symbol, .headerbtn {
   background-color: initial;
+  border: initial;
 }
 
-/* line 36, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 39, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .headerbtn {
   font-weight: 700;
 }
 
-/* line 41, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 44, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .coinmainDiv {
   display: Grid;
   grid-template-columns: 35% 65%;
@@ -39,14 +42,14 @@
   margin: 15rem;
 }
 
-/* line 49, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 52, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .mainDiv {
   font-family: "Merriweather Sans", sans-serif;
   display: flex;
   margin: 200px 0px 0px 450px;
 }
 
-/* line 55, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 58, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .box1 {
   grid-column: 1/2;
   grid-row: 1/4;
@@ -57,7 +60,7 @@
   box-shadow: -5px 5px 3px #5e6a7d;
 }
 
-/* line 71, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 74, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .box2 {
   grid-column: 2/4;
   grid-row: 1/4;
@@ -68,60 +71,60 @@
   box-shadow: -5px 5px 3px #5e6a7d;
 }
 
-/* line 90, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 93, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .coinName {
   font-size: 45px;
 }
 
-/* line 97, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 100, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .coinSym {
   font-size: 30px;
   color: grey;
   margin: auto 0px 25px 0px;
 }
 
-/* line 104, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 107, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .coinicon {
   width: 50px;
   margin: auto;
 }
 
-/* line 109, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 112, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .namesDiv, .priceData {
   display: flex;
   margin: auto;
 }
 
-/* line 115, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 118, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .metaList {
   list-style-type: none;
   margin: 50px auto auto 50px;
   font-size: 20px;
 }
 
-/* line 121, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 124, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .hash {
   font-size: 20px;
 }
 
-/* line 126, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 129, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .price {
   font-size: 35px;
   color: darkslategray;
   margin: auto;
 }
 
-/* line 132, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 135, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .metaTable {
   margin: auto;
 }
 
-/* line 140, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 143, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .metaTableData {
   font-weight: 500;
 }
 
-/* line 148, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 151, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .successval {
   font-size: 22px;
   margin-top: 32px;

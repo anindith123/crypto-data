@@ -4,12 +4,18 @@ import * as actions from '../redux/actions/fetchActions';
 
 
 class TableHeader extends Component {
-
+    constructor(props){
+        super(props);
+        this.state = {
+            currency : "USD"
+        }
+    }
     componentDidMount() {
-        // this.props.dispatch(actions.fetchall("market_cap"));
+         this.props.dispatch(actions.fetchall("market_cap",this.state.currency));
     }
 
     render() {
+        
         return <div className="table-responsive mainTable">
             <table className="table table-striped">
                 <tbody>

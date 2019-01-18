@@ -2,7 +2,8 @@ let initialState = {
     coins: [],
     coins_available: false,
     coin_available: false,
-    coin: []
+    coin: [],
+    convert: 'USD'
 
 };
 
@@ -11,8 +12,9 @@ export default function (state = initialState, action) {
         case 'FETCH_DATA':
             return {
                 ...state,
-                coins: action.payload,
-                coins_available: true
+                coins: action.payload[0],
+                coins_available: true,
+                convert: action.payload[1]
 
             }
         case 'RESET_DATA':
@@ -27,6 +29,11 @@ export default function (state = initialState, action) {
                 coin: action.payload,
                 coin_available: true
             }
+        case 'CONVERT':
+        return{
+        ...state,
+        convert : action.payload
+        }
         default: return state;
     }
 

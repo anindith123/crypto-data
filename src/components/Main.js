@@ -5,6 +5,8 @@ import TableHeader from './tableHeader';
 import styles from '../styles/styles.css';
 import { Route } from 'react-router-dom';
 import Coin from './coin.js';
+import DropDown from './dropdown';
+
 class Main extends Component {
 
     componentDidMount() {
@@ -16,6 +18,7 @@ class Main extends Component {
         //  console.log(this.props.cdata.data.data_available);
 
         return <div className="parentdiv">
+        <DropDown {...this.props}/>
             <Route exact path="/" render={() => (
                 <React.Fragment>
                     <TableHeader {...this.props} />

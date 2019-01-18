@@ -22,15 +22,18 @@ $major-font : 'Merriweather Sans', sans-serif;
     margin:auto;
 }
 
-.success{
+.successs{
     color: green;
+    font-weight: 600;
 }
 .failure{
     color:red;
+    font-weight: 600;
 }
 
 .symbol{
     background-color: initial;
+    border: initial;
 }
 
 .headerbtn{
@@ -146,7 +149,7 @@ $major-font : 'Merriweather Sans', sans-serif;
 }
 
 .successval{
-    @extend .success;
+    @extend .successs;
     font-size: 22px;
     margin-top : 32px;
 }

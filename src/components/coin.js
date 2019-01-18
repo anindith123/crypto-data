@@ -29,6 +29,7 @@ class Coin extends Component {
 
 
     render() {
+        console.log(coin);
         let id = this.props.match.match.params.id;
         let coin = this.props.cdata.data.coin;
         let coin_meta = this.props.cdata.data.coin[1];
@@ -49,10 +50,10 @@ class Coin extends Component {
                         </div>
                         <ul className="metaList">
                             <pre><li><i className="fas fa-hashtag hash">&nbsp;Rank&nbsp;{coin_quote.data.data[id].cmc_rank}</i></li>
-                                <li><i class="far fa-globe hash"></i><a href={coin_meta.data.data[id].urls.website} target="_blank">&nbsp;website</a></li>
-                                <li><i class="fas fa-file-code hash"></i><a href={coin_meta.data.data[id].urls.source_code} target="_blank">&nbsp;source code</a></li>
-                                <li><i class="fab fa-twitter hash"></i><a href={coin_meta.data.data[id].urls.twitter} target="_blank">&nbsp;Twitter</a></li>
-                                <li><i class="fab fa-reddit hash"></i><a href={coin_meta.data.data[id].urls.reddit} target="_blank">&nbsp;Reddit</a></li></pre>
+                                <li><i className="fa fa-globe hash" aria-hidden="true"></i><a href={coin_meta.data.data[id].urls.website} target="_blank">&nbsp;website</a></li>
+                                <li><i className="fas fa-file-code hash"></i><a href={coin_meta.data.data[id].urls.source_code} target="_blank">&nbsp;source code</a></li>
+                                <li><i className="fab fa-twitter hash"></i><a href={coin_meta.data.data[id].urls.twitter} target="_blank">&nbsp;Twitter</a></li>
+                                <li><i className="fab fa-reddit hash"></i><a href={coin_meta.data.data[id].urls.reddit} target="_blank">&nbsp;Reddit</a></li></pre>
 
                         </ul>
                     </div>
