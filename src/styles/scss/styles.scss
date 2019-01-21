@@ -137,6 +137,7 @@ $major-font : 'Merriweather Sans', sans-serif;
 }
 
 .metaTableHeader{
+    background: initial;
 
 }
 
@@ -152,4 +153,18 @@ $major-font : 'Merriweather Sans', sans-serif;
     @extend .successs;
     font-size: 22px;
     margin-top : 32px;
+}
+
+.metaData{
+    background: initial;
+    border: none;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+}
+
+.pagebtn{
+    margin: 10px;
 }

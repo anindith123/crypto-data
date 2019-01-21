@@ -18,7 +18,7 @@ this.dropdownclick = this.dropdownclick.bind(this);
             currency : e
         })
         console.log("dropdown clicked");
-        this.props.dispatch(actions.fetchall("market_cap",e));
+        this.props.dispatch(actions.fetchall(this.props.cdata.data.sort,e,this.props.cdata.data.start));
        // this.props.dispatch(actions.convert(e));
     }
     render(){

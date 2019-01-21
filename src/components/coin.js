@@ -26,17 +26,13 @@ class Coin extends Component {
         this.props.dispatch(actions.getcoin(this.props.match.match.params.id,this.props.cdata.data.convert));
     }
 
+    
+
     componentWillUnmount() {
         console.log("unmounted");
         this.props.dispatch(actions.reset());
     }
-
-
-
-
-
-    render() {
-        console.log(coin);
+render() {
         let id = this.props.match.match.params.id;
         let coin = this.props.cdata.data.coin;
         let coin_meta = this.props.cdata.data.coin[1];
@@ -57,7 +53,7 @@ class Coin extends Component {
                             <p className={coin_quote.data.data[id].quote[convert].percent_change_24h}>({numeral(coin_quote.data.data[id].quote[convert].percent_change_24h).format('0.00')}%)</p>
                         </div>
                         <ul className="metaList">
-                            <pre><li><i className="fas fa-hashtag hash">&nbsp;Rank&nbsp;{coin_quote.data.data[id].cmc_rank}</i></li>
+                            <pre className="metaData"><li><i className="fas fa-hashtag hash">&nbsp;Rank&nbsp;{coin_quote.data.data[id].cmc_rank}</i></li>
                                 <li><i className="fa fa-globe hash" aria-hidden="true"></i><a href={coin_meta.data.data[id].urls.website} target="_blank">&nbsp;website</a></li>
                                 <li><i className="fas fa-file-code hash"></i><a href={coin_meta.data.data[id].urls.source_code} target="_blank">&nbsp;source code</a></li>
                                 <li><i className="fab fa-twitter hash"></i><a href={coin_meta.data.data[id].urls.twitter} target="_blank">&nbsp;Twitter</a></li>

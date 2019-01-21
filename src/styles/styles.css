@@ -119,15 +119,37 @@
   margin: auto;
 }
 
-/* line 143, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 139, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+.metaTableHeader {
+  background: initial;
+}
+
+/* line 144, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .metaTableData {
   font-weight: 500;
 }
 
-/* line 151, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 152, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .successval {
   font-size: 22px;
   margin-top: 32px;
+}
+
+/* line 158, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+.metaData {
+  background: initial;
+  border: none;
+}
+
+/* line 163, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 168, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+.pagebtn {
+  margin: 10px;
 }
 
 /*# sourceMappingURL=../styles.map */

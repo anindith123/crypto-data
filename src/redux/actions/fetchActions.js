@@ -1,13 +1,16 @@
 
 import axios from 'axios';
 
-export function fetchall(sort,convert) {
+export function fetchall(sort,convert,start) {
+    let s = (start*100)+1;
+    console.log("$$$$$$$$$$$4");
+    console.log(s);
     return function (dispatch) {
-        axios.get(`https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=9fc98142-428a-4d61-8d29-66fc6aff1bbf&sort=${sort}&convert=${convert}`)
+        axios.get(`https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=9fc98142-428a-4d61-8d29-66fc6aff1bbf&sort=${sort}&convert=${convert}&start=${s}`)
             .then((response) => {
                 dispatch({
                     type: 'FETCH_DATA',
-                    payload: [response.data,convert]
+                    payload: [response.data,convert,start,sort]
                 })
             })
             .catch(function (error) {
