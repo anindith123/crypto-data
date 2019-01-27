@@ -2,32 +2,25 @@ $fsize : 40px;
 $major-font : 'Merriweather Sans', sans-serif;
 
 .parentdiv{
-   // background-image: linear-gradient(to right, #434343 0%, black 100%);
-   // background-image: linear-gradient(to top, #50cc7f 0%, #f5d100 100%);
-    //background-image: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%);
-   // background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);
-  // background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
-  //background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
- //background-image: linear-gradient(to right, #3ab5b0 0%, #3d99be 31%, #56317a 100%);
- //background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);
-    height: -webkit-fill-available;
+    height: fit-content;
     padding-top: 3px;
-    //background-image: linear-gradient(to right, #A8A7A7 0%,#CC527A 25%, #E8175D 50%, #474747 75%, #363636 100%);
-   
-
+   background-color: #052443;
+   min-height: calc(100vh);
+   min-width: fit-content;
 }
 
 .mainTable{
     width: 80%;
     margin:auto;
+    color: #d6d8dacc;
 }
 
 .successs{
-    color: green;
+    color: #299229;
     font-weight: 600;
 }
 .failure{
-    color:red;
+    color: #fe0505;
     font-weight: 600;
 }
 
@@ -39,14 +32,17 @@ $major-font : 'Merriweather Sans', sans-serif;
 .headerbtn{
     @extend .symbol;
     font-weight: 700;
+    color: aliceblue;
 }
 
 .coinmainDiv{
+    @media screen and (min-width:768px){
     display:Grid;
     grid-template-columns: 35% 65%;
     grid-gap: 1rem;
     height:max-content;
     margin: 15rem;
+    }
 }
 
 .mainDiv{
@@ -56,79 +52,69 @@ $major-font : 'Merriweather Sans', sans-serif;
 }
 
 .box1{
-    grid-column: 1/2;
-    grid-row:1/4;
-    
-    border-radius: 15px;
+    grid-column: 1/4;
+    grid-row:1/2;
+    color: white;
     display:flex;
-    flex-direction: column;
-    background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
-    box-shadow: -5px 5px 3px rgba(94, 106, 125, 1);
-    //background-color: rgba(32, 41, 117, 0.63);
-   // background-image: linear-gradient(-20deg, #f794a4 0%, #fdd6bd 100%);
-   //background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
- //background-blend-mode: multiply,multiply;
- //background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+    @media screen and (max-width: 768px){
+    display:grid;
+    justify-content: center;
+    }
 }
 
 .box2{
-    grid-column: 2/4;
-    grid-row:1/4;
-    border-radius: 15px;
-    display:flex;
-    flex-direction: column;
-    background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
-    box-shadow: -5px 5px 3px rgba(94, 106, 125, 1);
- //background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
- //background-blend-mode: lighten;
-   // background-image: linear-gradient(to top, #50cc7f 0%, #f5d100 100%);
-   // background-color: #152552a3;
-    //background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
-   // background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
-   //background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
-  // background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
-  
+    grid-row:2/4;
+    display:grid;
+    justify-content: space-around;
+    font-size: 25px;
+    text-align: center;
+    @media screen and (min-width:768px){
+        grid-column: 1/4;
+        display:inline-flex;
+        
+    }
+}
+
+.box1top{
+    display: flex;
+    margin: 30px 0px -20px 0px;
 }
 
 .coinName{
-    
     font-size: $fsize+5px;
-  
-
 }
 
 .coinSym{
-    
     font-size: $fsize - 10px;
     color: grey;
-    margin: auto 0px 25px 0px;
+    margin-top: 15px;
 }
 
 .coinicon{
-    width:50px;
-    margin: auto;
+    width:100px;
+    margin: auto 25px auto 30px;
 }
 
 .namesDiv{
-    display:flex;
-    margin: auto;
     
 }
 
 .metaList{
     list-style-type: none;
-    margin: 50px auto auto 50px;
+    padding-left: 0px;
     font-size: 20px;
 }
 
 .hash{
     
     font-size: 20px;
+    margin: 0px -7px 0px 15px;
+    color: #bd1c24;
 }
 
 .price{
     font-size: 35px;
-    color:darkslategray;
+    color:#b7c5c5ed;
     margin: auto;
 }
 
@@ -146,18 +132,30 @@ $major-font : 'Merriweather Sans', sans-serif;
 }
 
 .priceData{
-    @extend .namesDiv;
+    margin: auto;
+    @media screen and (min-width:768px){
+        display:flex;
+    }
 }
 
 .successval{
     @extend .successs;
     font-size: 22px;
-    margin-top : 32px;
+    margin: auto 0px auto 10px;
+}
+
+.failureval{
+    @extend .successval;
+    color: red;
 }
 
 .metaData{
     background: initial;
     border: none;
+    padding-left: 2px;
+    @media screen and (min-width:768px){
+       display: inline-flex;
+    }
 }
 
 .pagination{
@@ -167,4 +165,31 @@ $major-font : 'Merriweather Sans', sans-serif;
 
 .pagebtn{
     margin: 10px;
+}
+
+.listtext{
+    font-size: 20px;
+    color: #b4b6d4;
+}
+
+.coinData{
+    display: inline-flex;
+}
+
+.coinBox{
+        background-color: #0c2f52;
+        //background-color: #ff5858;
+        margin: 0px 10px 0px 10px;
+        height: 100px;
+        width: 350px;
+        font-size:25px;
+        color: #d9d6d6;
+    @media screen and (max-width:768px){
+    align-items: center;
+    }
+}
+
+.coinBoxDesc{
+    font-size: 20px;
+    color: #5b5a5f;
 }

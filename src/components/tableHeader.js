@@ -19,7 +19,7 @@ class TableHeader extends Component {
         let start = this.props.cdata.data.start;
         
         return <div className="table-responsive mainTable">
-            <table className="table table-striped">
+            <table className="table">
                 <tbody>
                     <tr className="tableheaders">
                         <th><button type="button" className="btn btn-default headerbtn" onClick={() => this.props.dispatch(actions.fetchall("market_cap",convert,start))}>Rank</button></th>
