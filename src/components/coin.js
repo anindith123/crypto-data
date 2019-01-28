@@ -21,15 +21,12 @@ class Coin extends Component {
     }
 
     componentDidMount() {
-
-        console.log("mounted coin");
         this.props.dispatch(actions.getcoin(this.props.match.match.params.id, this.props.cdata.data.convert));
     }
 
 
 
     componentWillUnmount() {
-        console.log("unmounted");
         this.props.dispatch(actions.reset());
     }
     render() {
@@ -42,45 +39,45 @@ class Coin extends Component {
             {coin[1] === undefined || coin[0] === undefined ?
                 (<div>Loading...</div>) :
                 <React.Fragment>
-                <div className="coinmainDiv">
-                    <div className="box1">
-                        <img src={coin_meta.data.data[id].logo} className="coinicon" alt={coin_meta.data.data[id].name} />
-                        <span>
-                            <span className="box1top">
-                                <p className="coinName">{coin_meta.data.data[id].name}</p>
-                                <p className="coinSym">{coin_meta.data.data[id].symbol}</p>
+                    <div className="coinmainDiv">
+                        <div className="box1">
+                            <img src={coin_meta.data.data[id].logo} className="coinicon" alt={coin_meta.data.data[id].name} />
+                            <span>
+                                <span className="box1top">
+                                    <p className="coinName">{coin_meta.data.data[id].name}</p>
+                                    <p className="coinSym">{coin_meta.data.data[id].symbol}</p>
+                                </span>
+                                <ul className="metaList">
+                                    <pre className="metaData"><li><span className="badge hash">&nbsp;Rank&nbsp;{coin_quote.data.data[id].cmc_rank}</span></li>
+                                        <li><i className="fa fa-globe hash" aria-hidden="true"></i><a className="listtext" href={coin_meta.data.data[id].urls.website} target="_blank" rel="noopener noreferrer">&nbsp;website</a></li>
+                                        <li><i className="fas fa-file-code hash"></i><a className="listtext" href={coin_meta.data.data[id].urls.source_code} target="_blank" rel="noopener noreferrer">&nbsp;source code</a></li>
+                                        <li><i className="fab fa-twitter hash"></i><a className="listtext" href={coin_meta.data.data[id].urls.twitter} target="_blank" rel="noopener noreferrer">&nbsp;Twitter</a></li>
+                                        <li><i className="fab fa-reddit hash"></i><a className="listtext" href={coin_meta.data.data[id].urls.reddit} target="_blank" rel="noopener noreferrer">&nbsp;Reddit</a></li></pre>
+
+                                </ul>
                             </span>
-                            <ul className="metaList">
-                                <pre className="metaData"><li><span className="badge hash">&nbsp;Rank&nbsp;{coin_quote.data.data[id].cmc_rank}</span></li>
-                                    <li><i className="fa fa-globe hash" aria-hidden="true"></i><a className="listtext" href={coin_meta.data.data[id].urls.website} target="_blank">&nbsp;website</a></li>
-                                    <li><i className="fas fa-file-code hash"></i><a className="listtext" href={coin_meta.data.data[id].urls.source_code} target="_blank">&nbsp;source code</a></li>
-                                    <li><i className="fab fa-twitter hash"></i><a className="listtext" href={coin_meta.data.data[id].urls.twitter} target="_blank">&nbsp;Twitter</a></li>
-                                    <li><i className="fab fa-reddit hash"></i><a className="listtext" href={coin_meta.data.data[id].urls.reddit} target="_blank">&nbsp;Reddit</a></li></pre>
 
-                            </ul>
-                        </span>
+                            <div className="priceData">
+                                <p className="price">{this.currency_format(coin_quote.data.data[id].quote[convert].price)}</p>
+                                <p className={this.cellvalue(coin_quote.data.data[id].quote[convert].percent_change_24h)}>({numeral(coin_quote.data.data[id].quote[convert].percent_change_24h).format('0.00')}%)</p>
+                            </div>
 
-                        <div className="priceData">
-                            <p className="price">{this.currency_format(coin_quote.data.data[id].quote[convert].price)}</p>
-                            <p className={this.cellvalue(coin_quote.data.data[id].quote[convert].percent_change_24h)}>({numeral(coin_quote.data.data[id].quote[convert].percent_change_24h).format('0.00')}%)</p>
+
+
                         </div>
 
 
+                        <div className="box2">
+                            <div className="coinBox">{this.currency_format(coin_quote.data.data[id].quote[convert].market_cap)}<br />
+                                <span className="coinBoxDesc">  Market Cap</span> </div>
+                            <div className="coinBox">{this.currency_format(coin_quote.data.data[id].circulating_supply)}
+                                {coin_quote.data.data[id].symbol}<br />
+                                <span className="coinBoxDesc"> Circulating supply</span></div>
+                            <div className="coinBox">{this.currency_format(coin_quote.data.data[id].quote[convert].volume_24h)}<br />
+                                <span className="coinBoxDesc"> volume 24h</span></div>
+                        </div>
 
                     </div>
-                    
-
-                    <div className="box2">
-                        <div className="coinBox">{this.currency_format(coin_quote.data.data[id].quote[convert].market_cap)}<br/>
-                          <span className="coinBoxDesc">  Market Cap</span> </div>
-                        <div className="coinBox">{this.currency_format(coin_quote.data.data[id].circulating_supply)}
-                            {coin_quote.data.data[id].symbol}<br/>
-                            <span className="coinBoxDesc"> Circulating supply</span></div>
-                        <div className="coinBox">{this.currency_format(coin_quote.data.data[id].quote[convert].volume_24h)}<br/>
-                        <span className="coinBoxDesc"> volume 24h</span></div>
-                    </div>
-                    
-                </div>
                 </React.Fragment>}
         </div>
 

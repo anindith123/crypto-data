@@ -218,20 +218,21 @@
 /* line 182, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .pagebtn {
   margin: 10px;
+  background-color: aliceblue;
 }
 
-/* line 186, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 187, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .listtext {
   font-size: 20px;
   color: #b4b6d4;
 }
 
-/* line 191, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 192, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .coinData {
   display: inline-flex;
 }
 
-/* line 195, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 196, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .coinBox {
   background-color: #0c2f52;
   margin: 0px 10px 0px 10px;
@@ -242,13 +243,13 @@
 }
 
 @media screen and (max-width: 768px) {
-  /* line 195, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+  /* line 196, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
   .coinBox {
     align-items: center;
   }
 }
 
-/* line 208, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
+/* line 209, E:/udemy/crypto-no webpack/cryptonoreact/src/styles/scss/styles.scss */
 .coinBoxDesc {
   font-size: 20px;
   color: #5b5a5f;

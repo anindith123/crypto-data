@@ -7,16 +7,13 @@ class Pagination extends Component{
 }
 
 pageClick(e){
-    console.log("***********");
-    console.log(e);
-   this.props.dispatch(actions.fetchall("market_cap",this.props.cdata.data.convert,e));
+   this.props.dispatch(actions.fetchall(this.props.cdata.data.sort,this.props.cdata.data.convert,e));
 
 }
 
 
 render(){
-    console.log("!!!!!!!!!!!!!");
-    console.log(this.props);
+
     return <div className="pageno">
         <ul className="pagination">
   <li><button className="btn pagebtn" type="button"  onClick={() => this.pageClick("0")}>1</button></li>

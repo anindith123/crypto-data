@@ -21,9 +21,6 @@ class TableData extends Component {
     }
 
     render() {
-        console.log("-----------------");
-        console.log(this.props.cdata.data.convert);
-        console.log(this.props.cdata);
         let convert = this.props.cdata.data.convert;
         return (this.props.cdata.data.coins_available ? (this.props.cdata.data.coins.data.map((coin) => <tr className="tabledata" key={coin.id}>
             <td>{coin.cmc_rank}</td>

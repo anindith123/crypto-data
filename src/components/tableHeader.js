@@ -11,7 +11,7 @@ class TableHeader extends Component {
         }
     }
     componentDidMount() {
-         this.props.dispatch(actions.fetchall("market_cap",this.props.cdata.data.convert,"0"));
+         this.props.dispatch(actions.fetchall(this.props.cdata.data.sort,this.props.cdata.data.convert,this.props.cdata.data.start));
     }
 
     render() {

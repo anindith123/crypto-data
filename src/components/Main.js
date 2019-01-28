@@ -10,13 +10,8 @@ import Pagination from './pagination';
 
 class Main extends Component {
 
-    componentDidMount() {
-        console.log("mounted");
-    }
+
     render() {
-        console.log("rendered");
-        //  console.log(this.props.cdata);
-        //  console.log(this.props.cdata.data.data_available);
 
         return <div className="parentdiv">
         <div className="header">
@@ -34,7 +29,6 @@ class Main extends Component {
                     <Coin {...this.props} match={match}/>
                 </React.Fragment>
             )} />
-
         </div>
     }
 }

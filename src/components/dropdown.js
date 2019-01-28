@@ -17,13 +17,10 @@ this.dropdownclick = this.dropdownclick.bind(this);
         this.setState({
             currency : e
         })
-        console.log("dropdown clicked");
         this.props.dispatch(actions.fetchall(this.props.cdata.data.sort,e,this.props.cdata.data.start));
-       // this.props.dispatch(actions.convert(e));
     }
     render(){
-        console.log("%%%%%%%%%%%%");
-        console.log(this.props);
+
         return<div>
             <ButtonToolbar>
                 <DropdownButton title={this.state.currency} id="dropdown-size-medium" onSelect={(e, c) => { this.dropdownclick(e,c)}}>
