@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import TableHeader from './tableHeader';
 import styles from '../styles/styles.css';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import Coin from './coin.js';
 import DropDown from './dropdown';
 import Pagination from './pagination';
@@ -19,7 +19,9 @@ class Main extends Component {
         //  console.log(this.props.cdata.data.data_available);
 
         return <div className="parentdiv">
-        
+        <div className="header">
+        <Link to="/"><p className="headerTag">CRYPTOCOINS</p></Link>
+        </div>
             <Route exact path="/" render={() => (
                 <React.Fragment>
                     <DropDown {...this.props}/>
